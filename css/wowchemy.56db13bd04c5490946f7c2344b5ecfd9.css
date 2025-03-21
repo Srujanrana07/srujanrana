@@ -4064,6 +4064,7 @@ input[type=submit].btn-block,input[type=reset].btn-block,input[type=button].btn-
     padding-left: 0
 }
 
+
 .navbar-nav .dropdown-menu {
     position: static;
     float: none
@@ -10895,6 +10896,10 @@ a.summary-link {
     color: #2962ff!important
 }
 
+
+
+
+
 .navbar .dropdown-menu {
     font-size: 13.86px
 }
@@ -12572,8 +12577,51 @@ div.chart {
 }
 
 
+/* Contact section styling for dark mode */
+.dark #contact {
+    background-color: var(--gray-dark) !important; /* Match other sections in dark mode */
+    color: var(--white) !important;
+}
 
+.dark #contact a {
+    color: var(--blue) !important; /* Ensure links are visible */
+}
 
+.dark #contact input,
+.dark #contact textarea {
+    background-color: #222 !important;
+    color: var(--white) !important;
+    border: 1px solid var(--gray) !important;
+}
+
+.dark #contact input::placeholder,
+.dark #contact textarea::placeholder {
+    color: var(--gray) !important;
+}
+
+/* Ensure links in dark mode appear in blue */
+.dark #contact a {
+    color: #1e90ff !important; /* Dodger blue */
+    text-decoration: none;
+}
+
+.dark #contact a:hover {
+    color: #00bfff !important; /* Lighter blue on hover */
+}
+/* Ensure all text inside the contact section is visible in dark mode */
+.dark #contact * {
+    color: white !important;
+}
+
+/* Keep links blue */
+.dark #contact a {
+    color: #1e90ff !important; /* Dodger blue */
+    text-decoration: none;
+}
+
+.dark #contact a:hover {
+    color: #00bfff !important; /* Lighter blue on hover */
+}
  
 /* Contact Section */
 /* Contact Section Styling */
@@ -12651,6 +12699,8 @@ div.chart {
 .contact-info {
     width: 100%;
     max-width: 400px;
+    margin: 0 auto;  /* Centering the div */
+    text-align: center;
 }
 
 .contact-info h3 {
