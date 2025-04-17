@@ -12563,7 +12563,116 @@ div.chart {
 }
 
 
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 40px;
+  height: 40px;
+  background-size: 100% 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
 
+@media (max-width: 768px) {
+  .card.d-flex {
+    flex-direction: column;
+  }
+}
+/* Carousel Arrow Styling */
+#blogCarousel .carousel-control-prev,
+#blogCarousel .carousel-control-next {
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  z-index: 2;
+}
+
+#blogCarousel .carousel-control-prev:hover,
+#blogCarousel .carousel-control-next:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 24px;
+  height: 24px;
+  background-size: 100% 100%;
+  filter: invert(1);
+}
+
+/* Better positioning for mobile */
+@media (max-width: 768px) {
+  #blogCarousel .carousel-control-prev,
+  #blogCarousel .carousel-control-next {
+    width: 40px;
+    height: 40px;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Dark mode styles for Blogs & Publications section */
+.dark #blogs {
+    background-color: var(--gray-dark) !important;
+    color: white !important; /* base text color */
+  }
+  
+  .dark #blogs .section-heading h1,
+  .dark #blogs .section-heading p {
+    color: white !important;
+  }
+  
+  .dark #blogs .card-title,
+  .dark #blogs .card-text {
+    color: white !important;
+  }
+  
+  .dark #blogs .card-text.text-muted {
+    color: #cccccc !important; /* make muted text visible in dark */
+  }
+  
+  .dark #blogs a.btn-outline-primary {
+    color: #1e90ff !important;
+    border-color: #1e90ff !important;
+  }
+  
+  .dark #blogs a.btn-outline-primary:hover {
+    background-color: #1e90ff !important;
+    color: #fff !important;
+  }
+  
+  .dark #blogs .carousel-control-prev-icon,
+  .dark #blogs .carousel-control-next-icon {
+    filter: invert(100%); /* ensures arrows are visible in dark */
+  }
+  
+  
+  
+.card img {
+    object-fit: cover;
+    height: 100%;
+  }
+  @media (max-width: 768px) {
+    .card.d-flex {
+      flex-direction: column;
+    }
+  }
+  
+.hover-effect {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .hover-effect:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  }
+  
 
 
 /* Professional Welcome Heading Styling */
