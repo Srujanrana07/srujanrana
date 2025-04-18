@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8" />
+  <title>All Blogs - Srujan Rana</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/main.2e3b3b7b.css" />
+  <link rel="stylesheet" href="css/wowchemy.56db13bd04c5490946f7c2344b5ecfd9.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+      --custom-dark-bg: #272935;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--global-bg, #f9f9f9);
+      color: var(--global-text-color, #333);
+      margin: 0;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: auto;
+      padding: 80px 20px 40px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--heading-color, #333);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .blog-card {
+      background: var(--card-bg, #fff);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+      transition: all 0.3s ease-in-out;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .blog-card-body {
+      padding: 20px;
+      flex: 1;
+    }
+
+    .blog-card-body h4 {
+      font-size: 1.3rem;
+      color: var(--primary, #1565c0);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .blog-card-body p {
+      color: var(--global-muted-color, #555);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .blog-card-body a {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--link-color, #1565c0);
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--link-color, #1565c0);
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .blog-card-body a:hover {
+      background-color: var(--link-color, #1565c0);
+      color: var(--link-hover-color, #fff);
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 40px;
+    }
+
+    .pagination button {
+      padding: 10px 18px;
+      font-size: 1rem;
+      background-color: var(--primary, #1565c0);
+      border: none;
+      /* color: var(--btn-text-color, #fff); */
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .pagination button:hover:not(:disabled) {
+      background-color: var(--primary-dark, #0d47a1);
+    }
+
+    .pagination button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    
+
+
+    /* Dark mode override for background if needed */
+    body.dark {
+      background-color: var(--custom-dark-bg);
+    }
+  </style>
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" class="page-wrapper">
+
+  <!-- Navbar Start -->
+  <header class="header--fixed">
+    <nav class="navbar navbar-expand-lg navbar-light" id="navbar-main">
+      <div class="container-xl">
+        <a class="navbar-brand" href="index.html">Srujan Rana</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content"
+          aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+          <span><i class="fas fa-bars"></i></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar-content">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html#about">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#experience">Experience</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#skills">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#accomplishments">Accomplishments</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#blogs">Blogs</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+          </ul>
+
+          <!-- Theme Toggle -->
+          <!-- <li class="nav-item dropdown theme-dropdown">
+            <a href="#" class="nav-link" id="theme-toggle" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+              <i class="fas fa-moon" id="theme-icon" aria-hidden="true"></i>
+            </a>
+            <div class="dropdown-menu">
+              <a href="#" class="dropdown-item js-set-theme-light">
+                <span>Light</span>
+              </a>
+              <a href="#" class="dropdown-item js-set-theme-dark">
+                <span>Dark</span>
+              </a>
+              <a href="#" class="dropdown-item js-set-theme-auto">
+                <span>Automatic</span>
+              </a>
+            </div>
+          </li> -->
+          
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- Navbar End -->
+
+  <!-- Blog Section -->
+  <div class="container">
+    <h1>All Blogs</h1>
+    <div id="blogs" class="blog-grid"></div>
+
+    <div class="pagination">
+      <button onclick="changePage(-1)" id="prev">Previous</button>
+      <button onclick="changePage(1)" id="next">Next</button>
+    </div>
+  </div>
+
+  <script>
+    const blogsPerPage = 3;
+    let currentPage = 1;
+
+    const blogs = [
+      {
+        title: "Semantic Search for AI",
+        desc: "Semantic search leverages NLP to understand the meaning behind queries for better results.",
+        img: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*orMOScrEbwajvNLAkvDk0Q.jpeg",
+        link: "https://medium.com/@srujanrana07/semantic-search-for-ai-a1d97fe06903"
+      },
+      {
+        title: "AI in Gaming: NPCs that Think",
+        desc: "How intelligent NPCs revolutionize game dynamics by reacting and learning in real-time.",
+        img: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*drG5TqqLETnKg83hiMIX-Q.png",
+        link: "https://medium.com/@srujanrana07/ai-in-gaming-npcs-that-think-1d43671e8c28"
+      },
+      {
+        title: "My Research Journey at NIT Raipur",
+        desc: "Deploying CNN-BiLSTM models for voice stress analysis in real-time applications.",
+        img: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*C6Gi3Kp3kmHa2R9Bfnp9uA.jpeg",
+        link: "https://medium.com/@srujanrana07/my-research-journey-at-nit-raipur-from-cnns-to-sunburns-2f7af0736790"
+      },
+      {
+        title: "Building Smarter AI Agents with MCP",
+        desc: "MCP enables multi-agent systems to plan, coordinate, and execute actions autonomously.",
+        img: "https://miro.medium.com/v2/resize:fit:1100/format:webp/0*WvxxTJupaYEdM0I2",
+        link: "https://medium.com/@srujanrana07/building-smarter-ai-agents-with-mcp-message-control-protocol-83f3cc708c59"
+      }
+    ];
+
+    function displayBlogs() {
+      const blogContainer = document.getElementById("blogs");
+      blogContainer.innerHTML = "";
+
+      const start = (currentPage - 1) * blogsPerPage;
+      const end = start + blogsPerPage;
+      const currentBlogs = blogs.slice(start, end);
+
+      currentBlogs.forEach(blog => {
+        blogContainer.innerHTML += `
+          <div class="blog-card">
+            <img src="${blog.img}" alt="${blog.title}">
+            <div class="blog-card-body">
+              <h4>${blog.title}</h4>
+              <p>${blog.desc}</p>
+              <a href="${blog.link}" target="_blank">Read More</a>
+            </div>
+          </div>
+        `;
+      });
+
+      document.getElementById("prev").disabled = currentPage === 1;
+      document.getElementById("next").disabled = end >= blogs.length;
+    }
+    
+    function updateThemeIcon() {
+    const theme = localStorage.getItem("wcTheme") || document.documentElement.getAttribute("data-theme");
+    const icon = document.getElementById("theme-icon");
+    if (!icon) return;
+
+    if (theme === "light") {
+      icon.classList.remove("fa-moon");
+      icon.classList.add("fa-sun");
+    } else {
+      icon.classList.remove("fa-sun");
+      icon.classList.add("fa-moon");
+    }
+  }
+  // Trigger on page load and theme toggle
+  document.addEventListener("DOMContentLoaded", updateThemeIcon);
+  document.querySelectorAll(".js-set-theme-light, .js-set-theme-dark, .js-set-theme-auto").forEach(btn => {
+    btn.addEventListener("click", () => setTimeout(updateThemeIcon, 100));
+  });
+
+    function changePage(delta) {
+      currentPage += delta;
+      displayBlogs();
+    }
+
+    window.onload = displayBlogs;
+  </script>
+
+  <script src="js/wowchemy-init.min.2ed908358299dd7ab553faae685c746c.js"></script>
+</body>
+</html>
