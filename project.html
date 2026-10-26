@@ -1,235 +1,207 @@
 <!DOCTYPE html>
-<html lang="en-us">
-
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projects | Srujan Rana - AI/ML Engineer</title>
-  <meta name="description" content="Explore the AI, Machine Learning, Deep Learning, Computer Vision, and NLP projects by Srujan Rana. Discover real-world applications with high accuracy and impactful outcomes.">
-  <meta name="keywords" content="Srujan Rana Projects, AI Projects, ML Projects, Deep Learning Projects, Computer Vision, NLP Projects, LLM, OCR, AES-256 Encryption, JavaFX, AI Portfolio, Srujan Rana Developer, Srujan Rana AI/ML">
+  <title>Projects — Srujan Rana</title>
+  <meta name="description" content="Selected AI, Machine Learning, and Software Engineering projects by Srujan Rana." />
   <meta name="author" content="Srujan Rana" />
-  <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://srujanrana.vercel.app/project.html" />
-  
-  <!-- Social media sharing -->
-  <meta property="og:title" content="Projects | Srujan Rana - AI/ML Engineer" />
-  <meta property="og:description" content="Browse impactful AI/ML projects by Srujan Rana including PII Protection, CropWise AI, and RetailMate POS system." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://srujanrana.vercel.app/project.html" />
-  <meta property="og:image" content="https://srujanrana.vercel.app/media/icons/Srujanrana.in.png" />
-  <meta property="og:site_name" content="Srujan Rana Portfolio" />
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Projects | Srujan Rana - AI/ML Engineer" />
-  <meta name="twitter:description" content="Explore the diverse portfolio of AI/ML projects crafted by Srujan Rana. Real-world applications with impactful results." />
-  <meta name="twitter:image" content="https://srujanrana.vercel.app/media/icons/Srujanrana.in.png" />
-  <meta name="twitter:creator" content="@srujan_rana" />
-
-  <!-- Structured Data for SEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Srujan Rana Projects",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "url": "https://github.com/Srujanrana07/pii-protection",
-        "name": "Cyprus: PII Protection System"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "url": "https://scarecrow-f10e9.web.app/",
-        "name": "CropWise: AI Farming"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "url": "https://github.com/Srujanrana07/Shopping-Managenemt-System-OOPs-Principles",
-        "name": "RetailMate: POS Manager"
-      }
-    ]
-  }
-  </script>
-
-  <!-- CSS files -->
-  <link rel="stylesheet" href="css/wowchemy.56db13bd04c5490946f7c2344b5ecfd9.css">
-  <link rel="stylesheet" href="css/main.2e3b3b7b.css">
-  <link rel="stylesheet" href="css/vendor-bundle.min.c7b8d9abd591ba2253ea42747e3ac3f5.css">
-  <link rel="stylesheet" href="css/libs/chroma/github-light.min.css" title="hl-light">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" />
-
-  <!-- Theme Configuration -->
-  <script>
-    window.wc = {
-      darkLightEnabled: true,
-      isSiteThemeDark: false
-    };
-  </script>
-
-<style>
-    main.page-body {  
-      padding-top: 0 !important;
-      margin-top: 0 !important;
-    }
-  </style>
-  
+  <link rel="icon" type="image/png" href="media/icons/Srujanrana.in.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/modern.css" />
+  <script src="js/app.js" defer></script>
 </head>
+<body>
 
-<body class="page-wrapper">
-  <!-- NAVBAR -->
-  <header class="header--fixed">
-    <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
-      <div class="container-xl">
-        <a class="navbar-brand" href="index.html">Srujan Rana</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content"
-          aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
-          <span><i class="fas fa-bars"></i></span>
+  <div class="ambient-spotlight" aria-hidden="true"></div>
+
+  <div class="page-wrapper">
+    <!-- Minimal Floating Pill Navigation -->
+    <header class="nav-wrapper">
+      <nav class="nav-pill" aria-label="Quick Navigation">
+        <a href="index.html#about" class="nav-item-link">Home</a>
+        <a href="index.html#experience" class="nav-item-link">Experience</a>
+        <a href="index.html#education" class="nav-item-link">Education</a>
+        <a href="project.html" class="nav-item-link active">Projects</a>
+        <a href="index.html#skills" class="nav-item-link">Skills</a>
+        <a href="blogs.html" class="nav-item-link">Writing</a>
+        <a href="index.html#contact" class="nav-item-link">Contact</a>
+        <span class="nav-divider"></span>
+        <button type="button" class="nav-icon-btn" id="theme-toggle-btn" aria-label="Toggle Theme" title="Toggle theme">
+          <i class="fas fa-sun" id="theme-icon"></i>
         </button>
-        <div class="collapse navbar-collapse main-menu-item" id="navbar-content">
-          <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="index.html#about">Home</a></li>
-            <li class="nav-item"><a class="nav-link active" href="project.html">Projects</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.html#experience">Experience</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.html#skills">Skills</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.html#accomplishments">Accomplishments</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.html#blogs">Blogs</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
-          </ul>
+        <a href="authors/Srujan_Rana_Resume.pdf" class="nav-icon-btn" target="_blank" rel="noopener" aria-label="View Resume" title="Resume PDF">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section" style="padding-top: 1rem;">
+        <div class="section-label">// ARCHIVE</div>
+        <h1 class="section-heading" style="font-size: 2rem;">All Projects</h1>
+
+        <!-- Filter Chips -->
+        <div class="project-filter-row">
+          <button type="button" class="filter-chip active" data-filter="all">All</button>
+          <button type="button" class="filter-chip" data-filter="ml">Machine Learning</button>
+          <button type="button" class="filter-chip" data-filter="cv-dl">Computer Vision & DL</button>
+          <button type="button" class="filter-chip" data-filter="nlp">NLP & Security</button>
+          <button type="button" class="filter-chip" data-filter="software">Software Engineering</button>
         </div>
-        <!-- <ul class="navbar-nav ml-auto">
-          <li class="nav-item dropdown theme-dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="themeDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false"><i class="fas fa-moon"></i></a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="themeDropdown">
-              <a class="dropdown-item js-set-theme-light" href="#">Light</a>
-              <a class="dropdown-item js-set-theme-dark" href="#">Dark</a>
-              <a class="dropdown-item js-set-theme-auto" href="#">Auto</a>
+
+        <div class="projects-container">
+          <!-- 1. Voice Stress Analyzer -->
+          <article class="craft-project-card" data-category="ml cv-dl">
+            <div class="project-top-row">
+              <div class="project-name-group">
+                <h2 class="project-name">Real-Time Voice Stress Analyzer</h2>
+                <span class="tag-highlight">NIT Raipur Research</span>
+              </div>
+              <span class="mini-chip">92% Accuracy</span>
             </div>
-          </li>
-        </ul> -->
-      </div>
-    </nav>
-  </header>
-
-  <!-- MAIN CONTENT -->
-  <main class="page-body">
-    <section id="projects" class="home-section wg-portfolio">
-      <div class="home-section-bg"></div>
-      <div class="container">
-        <div class="row">
-          <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
-            <h1 class="mb-0">Projects</h1>
-          </div>
-          <div class="col-12 col-lg-8">
-            <div class="project-toolbar">
-              <div class="project-filters">
-                <div class="btn-toolbar">
-                  <div class="btn-group flex-wrap">
-                    <a href="#" data-filter="*" class="btn btn-primary btn-lg active">All</a>
-                    <a href="#" data-filter=".js-id-Machine-Learning" class="btn btn-primary btn-lg">Machine Learning</a>
-                    <a href="#" data-filter=".js-id-Deep-Learning" class="btn btn-primary btn-lg">Deep Learning</a>
-                    <a href="#" data-filter=".js-id-Computer-Vision" class="btn btn-primary btn-lg">Computer Vision</a>
-                    <a href="#" data-filter=".js-id-NLP-LLM" class="btn btn-primary btn-lg">NLP/LLM</a>
-                  </div>
-                </div>
-              </div>
+            <p class="project-summary">
+              Novel hybrid CNN-BiLSTM neural network with self-attention for acoustic voice stress biomarker classification. 
+              Trained on Mel Frequency Spectrograms (MFCCs) achieving 92% accuracy with an 80% inference speedup. 
+              Supervised by Dr. Pradeep Singh and deployed to Google Cloud with a Flask interface.
+            </p>
+            <div class="project-chips">
+              <span class="mini-chip">PyTorch</span>
+              <span class="mini-chip">CNN-BiLSTM</span>
+              <span class="mini-chip">Self-Attention</span>
+              <span class="mini-chip">Librosa</span>
+              <span class="mini-chip">Flask</span>
+              <span class="mini-chip">GCP</span>
             </div>
+            <div class="project-links">
+              <button type="button" class="link-action" data-cert-src="authors/certificates/1728564823456.jpg" data-cert-title="NIT Raipur Research Certificate">
+                <i class="fas fa-certificate"></i>
+                <span>View Research Credential</span>
+              </button>
+              <a href="https://medium.com/@srujanrana07/my-research-journey-at-nit-raipur-from-cnns-to-sunburns-2f7af0736790" class="link-action" target="_blank" rel="noopener">
+                <i class="fas fa-book-open"></i>
+                <span>Research Notes ↗</span>
+              </a>
+            </div>
+          </article>
 
-            <div class="isotope projects-container row js-layout-row">
-
-              <!-- Cyprus -->
-              <div class="col-12 isotope-item js-id-Machine-Learning js-id-Computer-Vision">
-                <div class="media stream-item view-compact">
-                  <div class="media-body">
-                    <div class="section-subheading article-title mb-0 mt-0">
-                      <a href="https://github.com/Srujanrana07/pii-protection" target="_blank">Cyprus: PII Protection System</a>
-                    </div>
-                    <a class="summary-link">
-                      <div class="article-style">
-                        Automated document verification with OCR & AES-256 encryption. Role-based access. Reduced manual processing by 80%.
-                      </div>
-                    </a>
-                    <div class="stream-meta article-metadata"><span>Srujan Rana</span></div>
-                    <div class="btn-links">
-                      <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/Srujanrana07/pii-protection" target="_blank"><i class="fab fa-github mr-1"></i>Repository</a>
-                    </div>
-                  </div>
-                </div>
+          <!-- 2. Cyprus PII Protection System -->
+          <article class="craft-project-card" data-category="ml nlp">
+            <div class="project-top-row">
+              <div class="project-name-group">
+                <h2 class="project-name">Cyprus: PII Protection System</h2>
+                <span class="tag-highlight">Security & CV</span>
               </div>
+              <span class="mini-chip">+70% OCR Accuracy</span>
+            </div>
+            <p class="project-summary">
+              Automated document verification system engineered to safeguard sensitive personally identifiable information (PII). 
+              Combines high-precision OCR text extraction with cryptographic AES-256 encryption and role-based access control (RBAC). 
+              Reduced manual review cycles by 80%.
+            </p>
+            <div class="project-chips">
+              <span class="mini-chip">Computer Vision</span>
+              <span class="mini-chip">Tesseract OCR</span>
+              <span class="mini-chip">AES-256</span>
+              <span class="mini-chip">Python</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Srujanrana07/pii-protection" class="link-action" target="_blank" rel="noopener">
+                <i class="fab fa-github"></i>
+                <span>GitHub Repository ↗</span>
+              </a>
+            </div>
+          </article>
 
-              <!-- CropWise -->
-              <div class="col-12 isotope-item js-id-Deep-Learning js-id-Machine-Learning js-id-Computer-Vision js-id-NLP-LLM">
-                <div class="media stream-item view-compact">
-                  <div class="media-body">
-                    <div class="section-subheading article-title mb-0 mt-0">
-                      <a href="https://scarecrow-f10e9.web.app/" target="_blank">CropWise: AI Farming</a>
-                    </div>
-                    <a class="summary-link">
-                      <div class="article-style">
-                        AI system for crop disease detection and prediction with 90%+ accuracy. Features chatbot and multilingual support.
-                      </div>
-                    </a>
-                    <div class="stream-meta article-metadata"><span>Srujan Rana</span></div>
-                    <div class="btn-links">
-                      <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://scarecrow-f10e9.web.app/" target="_blank"><i class="fas fa-globe mr-1"></i>Live Demo</a>
-                      <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://youtu.be/PFJfsLwCm8U" target="_blank"><i class="fab fa-youtube mr-1"></i>Video</a>
-                    </div>
-                  </div>
-                </div>
+          <!-- 3. CropWise AI Farming Platform -->
+          <article class="craft-project-card" data-category="ml cv-dl nlp">
+            <div class="project-top-row">
+              <div class="project-name-group">
+                <h2 class="project-name">CropWise: AI Smart Farming</h2>
+                <span class="tag-highlight">Live Web App</span>
               </div>
+              <span class="mini-chip">83% Detection</span>
+            </div>
+            <p class="project-summary">
+              AI-driven smart agriculture platform achieving 83% plant disease identification and 90% crop yield prediction. 
+              Features an interactive multilingual advisory AI chatbot and farmer marketplace.
+            </p>
+            <div class="project-chips">
+              <span class="mini-chip">Deep Learning</span>
+              <span class="mini-chip">Computer Vision</span>
+              <span class="mini-chip">AI Chatbot</span>
+              <span class="mini-chip">Firebase</span>
+              <span class="mini-chip">Web</span>
+            </div>
+            <div class="project-links">
+              <a href="https://scarecrow-f10e9.web.app/" class="link-action" target="_blank" rel="noopener">
+                <i class="fas fa-globe"></i>
+                <span>Live Web App ↗</span>
+              </a>
+              <a href="https://youtu.be/PFJfsLwCm8U" class="link-action" target="_blank" rel="noopener">
+                <i class="fab fa-youtube"></i>
+                <span>Video Demo ↗</span>
+              </a>
+            </div>
+          </article>
 
-              <!-- RetailMate -->
-              <div class="col-12 isotope-item js-id-Java">
-                <div class="media stream-item view-compact">
-                  <div class="media-body">
-                    <div class="section-subheading article-title mb-0 mt-0">
-                      <a href="https://github.com/Srujanrana07/Shopping-Managenemt-System-OOPs-Principles" target="_blank">RetailMate: POS Manager</a>
-                    </div>
-                    <a class="summary-link">
-                      <div class="article-style">
-                        JavaFX POS system using OOP & MySQL. Inventory, accounts, and sales management. Improved efficiency by 60%.
-                      </div>
-                    </a>
-                    <div class="stream-meta article-metadata"><span>Srujan Rana</span></div>
-                    <div class="btn-links">
-                      <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/Srujanrana07/Shopping-Managenemt-System-OOPs-Principles" target="_blank"><i class="fab fa-github mr-1"></i>Repository</a>
-                    </div>
-                  </div>
-                </div>
+          <!-- 4. RetailMate POS & Inventory Manager -->
+          <article class="craft-project-card" data-category="software">
+            <div class="project-top-row">
+              <div class="project-name-group">
+                <h2 class="project-name">RetailMate: POS & Inventory Manager</h2>
+                <span class="tag-highlight">Desktop App</span>
               </div>
-
-            </div> <!-- /.projects-container -->
-          </div>
+              <span class="mini-chip">+60% Speedup</span>
+            </div>
+            <p class="project-summary">
+              Enterprise Point of Sale application engineered in JavaFX adhering to strict OOP design principles with MySQL via JDBC. 
+              Automated real-time inventory tracking and ACID-compliant transaction records.
+            </p>
+            <div class="project-chips">
+              <span class="mini-chip">Java</span>
+              <span class="mini-chip">JavaFX</span>
+              <span class="mini-chip">MySQL</span>
+              <span class="mini-chip">JDBC</span>
+              <span class="mini-chip">OOP</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Srujanrana07/Shopping-Managenemt-System-OOPs-Principles" class="link-action" target="_blank" rel="noopener">
+                <i class="fab fa-github"></i>
+                <span>GitHub Repository ↗</span>
+              </a>
+            </div>
+          </article>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
 
-  <!-- SCRIPTS -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-  <script>
-    const filters = document.querySelectorAll('.project-filters a');
-    const grid = document.querySelector('.projects-container');
-    const iso = new Isotope(grid, {
-      itemSelector: '.isotope-item',
-      layoutMode: 'fitRows'
-    });
-    filters.forEach(btn => {
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        filters.forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        const filterValue = this.getAttribute('data-filter');
-        iso.arrange({ filter: filterValue });
-      });
-    });
-  </script>
-  <script src="js/wowchemy-init.min.2ed908358299dd7ab553faae685c746c.js"></script>
+    <!-- Minimalist Footer -->
+    <footer class="footer-bar">
+      <span>© 2026 Srujan Rana. Built with care.</span>
+      <div class="footer-social-row">
+        <a href="https://github.com/Srujanrana07" class="footer-social-link" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/srujan-rana/" class="footer-social-link" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://medium.com/@srujanrana07" class="footer-social-link" target="_blank" rel="noopener">Medium</a>
+        <a href="https://x.com/srujan_rana/" class="footer-social-link" target="_blank" rel="noopener">X</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-backdrop" id="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal-shell">
+      <div class="modal-bar">
+        <span class="modal-caption" id="modal-caption">Certificate Preview</span>
+        <button type="button" class="modal-dismiss" id="modal-dismiss" aria-label="Close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-viewport" id="modal-viewport"></div>
+    </div>
+  </div>
+
 </body>
-
 </html>

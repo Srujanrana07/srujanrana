@@ -1,366 +1,99 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tech Blogs - Srujan Rana</title>
-  
-  <!-- Stylesheets and Scripts -->
-  <link rel="stylesheet" href="css/main.2e3b3b7b.css" />
-  <link rel="stylesheet" href="css/wowchemy.56db13bd04c5490946f7c2344b5ecfd9.css" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <link rel="canonical" href="https://srujanrana.vercel.app/blogs.html" />  
-  <!-- Meta Information -->
+  <title>Writing — Srujan Rana</title>
+  <meta name="description" content="Technical blogs and publications by Srujan Rana on NLP, Deep Learning, Voice Stress Analysis, Game AI, and Agentic Systems." />
   <meta name="author" content="Srujan Rana" />
-  <meta name="publisher" content="Srujan Rana" />
-  <meta name="description" content="Explore blogs written by Srujan Rana on AI, ML, deep learning, and real-time intelligent systems." />
-  <meta name="keywords" content="AI blogs, machine learning blogs, deep learning tutorials, real-time ML systems, AI in gaming, semantic search AI, voice stress analysis" />
   <link rel="canonical" href="https://srujanrana.vercel.app/blogs.html" />
-<!-- Open Graph (Facebook & LinkedIn) -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://srujanrana.vercel.app/blogs.html" />
-<meta property="og:title" content="Tech Blogs on AI/ML Research & Applications - Srujan Rana" />
-<meta property="og:description" content="Explore in-depth technical articles on AI implementation, machine learning models, and real-time intelligent systems development." />
-<meta property="og:image" content="https://srujanrana.vercel.app/images/og-blog-image.jpg" />
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content="@srujan_rana" />
-<meta name="twitter:title" content="AI/ML Tech Blogs by Srujan Rana" />
-<meta name="twitter:description" content="Technical deep dives on machine learning implementations, neural networks, and real-time AI systems." />
-<meta name="twitter:image" content="https://srujanrana.vercel.app/images/twitter-blog-card.jpg" />
-
-<!-- Schema Markup -->
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": "https://srujanrana.vercel.app#person",
-    "name": "Srujan Rana",
-    "url": "https://srujanrana.vercel.app",
-    "sameAs": [
-      "https://github.com/Srujannrana07",
-      "https://www.linkedin.com/in/srujan-rana/",
-      "https://medium.com/@srujanrana07",
-      "https://x.com/srujan_rana/"
-    ],
-    "jobTitle": "AI/ML Engineer",
-    "description": "Portfolio of Srujan Rana, an AI/ML Engineer specializing in real-time ML applications and deep learning research."
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "https://srujanrana.vercel.app/blogs.html#webpage",
-    "name": "Blogs by Srujan Rana",
-    "url": "https://srujanrana.vercel.app/blogs.html",
-    "description": "Collection of technical blogs by Srujan Rana on topics including AI, ML, DL, and computer vision."
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@type": "BlogPosting",
-          "name": "Semantic Search for AI",
-          "url": "https://medium.com/@srujanrana07/semantic-search-for-ai-a1d97fe06903",
-          "image": "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*orMOScrEbwajvNLAkvDk0Q.jpeg",
-          "description": "Implementing NLP-powered semantic search systems for enhanced AI capabilities",
-          "author": { "@type": "Person", "name": "Srujan Rana" }
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "item": {
-          "@type": "BlogPosting",
-          "name": "AI in Gaming: NPCs that Think",
-          "url": "https://medium.com/@srujanrana07/ai-in-gaming-npcs-that-think-1d43671e8c28",
-          "image": "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*drG5TqqLETnKg83hiMIX-Q.png",
-          "description": "Developing intelligent NPC behavior using machine learning in game development",
-          "author": { "@type": "Person", "name": "Srujan Rana" }
-        }
-      }
-    ]
-  }
-  </script>
-
-
-
-  <style>
-    :root {
-      --custom-dark-bg: #272935;
-    }
-
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: var(--global-bg, #f9f9f9);
-      color: var(--global-text-color, #333);
-      margin: 0;
-    }
-
-    .container {
-      max-width: 1140px;
-      margin: auto;
-      padding: 80px 20px 40px;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--heading-color, #333);
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-
-    .blog-card {
-      background: var(--card-bg, #fff);
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
-      transition: all 0.3s ease-in-out;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .blog-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    .blog-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .blog-card-body {
-      padding: 20px;
-      flex: 1;
-    }
-
-    .blog-card-body h4 {
-      font-size: 1.3rem;
-      color: var(--primary, #1565c0);
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .blog-card-body p {
-      color: var(--global-muted-color, #555);
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-
-    .blog-card-body a {
-      display: inline-block;
-      margin-top: 12px;
-      color: var(--link-color, #1565c0);
-      font-weight: 600;
-      text-decoration: none;
-      border: 1px solid var(--link-color, #1565c0);
-      padding: 6px 12px;
-      border-radius: 6px;
-      transition: all 0.3s ease;
-    }
-
-    .blog-card-body a:hover {
-      background-color: var(--link-color, #1565c0);
-      color: var(--link-hover-color, #fff);
-    }
-
-    .pagination {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 40px;
-    }
-
-    .pagination button {
-      padding: 10px 18px;
-      font-size: 1rem;
-      background-color: var(--primary, #1565c0);
-      border: none;
-      /* color: var(--btn-text-color, #fff); */
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .pagination button:hover:not(:disabled) {
-      background-color: var(--primary-dark, #0d47a1);
-    }
-
-    .pagination button:disabled {
-      background-color: #ccc;
-      cursor: not-allowed;
-    }
-    
-
-
-    /* Dark mode override for background if needed */
-    body.dark {
-      background-color: var(--custom-dark-bg);
-    }
-  </style>
+  <link rel="icon" type="image/png" href="media/icons/Srujanrana.in.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/modern.css" />
+  <script src="js/app.js" defer></script>
 </head>
+<body>
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" class="page-wrapper">
+  <div class="ambient-spotlight" aria-hidden="true"></div>
 
-  <!-- Navbar Start -->
-  <header class="header--fixed">
-    <nav class="navbar navbar-expand-lg navbar-light" id="navbar-main">
-      <div class="container-xl">
-        <a class="navbar-brand" href="index.html">Srujan Rana</a>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content"
-          aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
-          <span><i class="fas fa-bars"></i></span>
+  <div class="page-wrapper">
+    <!-- Minimal Floating Pill Navigation -->
+    <header class="nav-wrapper">
+      <nav class="nav-pill" aria-label="Quick Navigation">
+        <a href="index.html#about" class="nav-item-link">Home</a>
+        <a href="index.html#experience" class="nav-item-link">Experience</a>
+        <a href="index.html#education" class="nav-item-link">Education</a>
+        <a href="project.html" class="nav-item-link">Projects</a>
+        <a href="index.html#skills" class="nav-item-link">Skills</a>
+        <a href="blogs.html" class="nav-item-link active">Writing</a>
+        <a href="index.html#contact" class="nav-item-link">Contact</a>
+        <span class="nav-divider"></span>
+        <button type="button" class="nav-icon-btn" id="theme-toggle-btn" aria-label="Toggle Theme" title="Toggle theme">
+          <i class="fas fa-sun" id="theme-icon"></i>
         </button>
+        <a href="authors/Srujan_Rana_Resume.pdf" class="nav-icon-btn" target="_blank" rel="noopener" aria-label="View Resume" title="Resume PDF">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+      </nav>
+    </header>
 
-        <div class="collapse navbar-collapse" id="navbar-content">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><a class="nav-link" href="index.html#about">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.html#projects">Projects</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.html#experience">Experience</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.html#skills">Skills</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.html#accomplishments">Accomplishments</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.html#blogs">Blogs</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
-          </ul>
+    <main>
+      <section class="section" style="padding-top: 1rem;">
+        <div class="section-label">// THOUGHT LEADERSHIP</div>
+        <h1 class="section-heading" style="font-size: 2rem;">Writing & Publications</h1>
 
-          <!-- Theme Toggle -->
-          <!-- <li class="nav-item dropdown theme-dropdown">
-            <a href="#" class="nav-link" id="theme-toggle" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
-              <i class="fas fa-moon" id="theme-icon" aria-hidden="true"></i>
-            </a>
-            <div class="dropdown-menu">
-              <a href="#" class="dropdown-item js-set-theme-light">
-                <span>Light</span>
-              </a>
-              <a href="#" class="dropdown-item js-set-theme-dark">
-                <span>Dark</span>
-              </a>
-              <a href="#" class="dropdown-item js-set-theme-auto">
-                <span>Automatic</span>
-              </a>
+        <div class="articles-stack">
+          <!-- Article 1 -->
+          <a href="https://medium.com/@srujanrana07/semantic-search-for-ai-a1d97fe06903" class="article-row" target="_blank" rel="noopener">
+            <div class="article-left">
+              <h2 class="article-heading">Semantic Search for AI</h2>
+              <span class="article-sub">Dense retrieval models, vector representations, and semantic intent.</span>
             </div>
-          </li> -->
-          
+            <span class="article-arrow">→</span>
+          </a>
+
+          <!-- Article 2 -->
+          <a href="https://medium.com/@srujanrana07/ai-in-gaming-npcs-that-think-1d43671e8c28" class="article-row" target="_blank" rel="noopener">
+            <div class="article-left">
+              <h2 class="article-heading">AI in Gaming: NPCs that Think</h2>
+              <span class="article-sub">Reinforcement learning and autonomous decision agents in virtual worlds.</span>
+            </div>
+            <span class="article-arrow">→</span>
+          </a>
+
+          <!-- Article 3 -->
+          <a href="https://medium.com/@srujanrana07/my-research-journey-at-nit-raipur-from-cnns-to-sunburns-2f7af0736790" class="article-row" target="_blank" rel="noopener">
+            <div class="article-left">
+              <h2 class="article-heading">My Research Journey at NIT Raipur</h2>
+              <span class="article-sub">Engineering CNN-BiLSTM architectures for acoustic voice stress biomarkers.</span>
+            </div>
+            <span class="article-arrow">→</span>
+          </a>
+
+          <!-- Article 4 -->
+          <a href="https://medium.com/@srujanrana07/building-smarter-ai-agents-with-mcp-message-control-protocol-83f3cc708c59" class="article-row" target="_blank" rel="noopener">
+            <div class="article-left">
+              <h2 class="article-heading">Building Smarter AI Agents with MCP</h2>
+              <span class="article-sub">Multi-agent tool orchestration and Model Context Protocol principles.</span>
+            </div>
+            <span class="article-arrow">→</span>
+          </a>
         </div>
+      </section>
+    </main>
+
+    <!-- Minimalist Footer -->
+    <footer class="footer-bar">
+      <span>© 2026 Srujan Rana. Built with care.</span>
+      <div class="footer-social-row">
+        <a href="https://github.com/Srujanrana07" class="footer-social-link" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/srujan-rana/" class="footer-social-link" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://medium.com/@srujanrana07" class="footer-social-link" target="_blank" rel="noopener">Medium</a>
+        <a href="https://x.com/srujan_rana/" class="footer-social-link" target="_blank" rel="noopener">X</a>
       </div>
-    </nav>
-  </header>
-  <!-- Navbar End -->
-
-  <!-- Blog Section -->
-  <div class="container">
-    <h1>All Blogs</h1>
-    <div id="blogs" class="blog-grid"></div>
-
-    <div class="pagination">
-      <button onclick="changePage(-1)" id="prev">Previous</button>
-      <button onclick="changePage(1)" id="next">Next</button>
-    </div>
+    </footer>
   </div>
 
-  <script>
-    const blogsPerPage = 3;
-    let currentPage = 1;
-
-    const blogs = [
-      {
-        title: "Semantic Search for AI",
-        desc: "Semantic search leverages NLP to understand the meaning behind queries for better results.",
-        img: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*orMOScrEbwajvNLAkvDk0Q.jpeg",
-        link: "https://medium.com/@srujanrana07/semantic-search-for-ai-a1d97fe06903"
-      },
-      {
-        title: "AI in Gaming: NPCs that Think",
-        desc: "How intelligent NPCs revolutionize game dynamics by reacting and learning in real-time.",
-        img: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*drG5TqqLETnKg83hiMIX-Q.png",
-        link: "https://medium.com/@srujanrana07/ai-in-gaming-npcs-that-think-1d43671e8c28"
-      },
-      {
-        title: "My Research Journey at NIT Raipur",
-        desc: "Deploying CNN-BiLSTM models for voice stress analysis in real-time applications.",
-        img: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*C6Gi3Kp3kmHa2R9Bfnp9uA.jpeg",
-        link: "https://medium.com/@srujanrana07/my-research-journey-at-nit-raipur-from-cnns-to-sunburns-2f7af0736790"
-      },
-      {
-        title: "Building Smarter AI Agents with MCP",
-        desc: "MCP enables multi-agent systems to plan, coordinate, and execute actions autonomously.",
-        img: "https://miro.medium.com/v2/resize:fit:1100/format:webp/0*WvxxTJupaYEdM0I2",
-        link: "https://medium.com/@srujanrana07/building-smarter-ai-agents-with-mcp-message-control-protocol-83f3cc708c59"
-      }
-    ];
-
-    function displayBlogs() {
-      const blogContainer = document.getElementById("blogs");
-      blogContainer.innerHTML = "";
-
-      const start = (currentPage - 1) * blogsPerPage;
-      const end = start + blogsPerPage;
-      const currentBlogs = blogs.slice(start, end);
-
-      currentBlogs.forEach(blog => {
-        blogContainer.innerHTML += `
-          <div class="blog-card">
-            <img src="${blog.img}" alt="${blog.title}">
-            <div class="blog-card-body">
-              <h4>${blog.title}</h4>
-              <p>${blog.desc}</p>
-              <a href="${blog.link}" target="_blank">Read More</a>
-            </div>
-          </div>
-        `;
-      });
-
-      document.getElementById("prev").disabled = currentPage === 1;
-      document.getElementById("next").disabled = end >= blogs.length;
-    }
-    
-    function updateThemeIcon() {
-    const theme = localStorage.getItem("wcTheme") || document.documentElement.getAttribute("data-theme");
-    const icon = document.getElementById("theme-icon");
-    if (!icon) return;
-
-    if (theme === "light") {
-      icon.classList.remove("fa-moon");
-      icon.classList.add("fa-sun");
-    } else {
-      icon.classList.remove("fa-sun");
-      icon.classList.add("fa-moon");
-    }
-  }
-  // Trigger on page load and theme toggle
-  document.addEventListener("DOMContentLoaded", updateThemeIcon);
-  document.querySelectorAll(".js-set-theme-light, .js-set-theme-dark, .js-set-theme-auto").forEach(btn => {
-    btn.addEventListener("click", () => setTimeout(updateThemeIcon, 100));
-  });
-
-    function changePage(delta) {
-      currentPage += delta;
-      displayBlogs();
-    }
-
-    window.onload = displayBlogs;
-  </script>
-
-  <script src="js/wowchemy-init.min.2ed908358299dd7ab553faae685c746c.js"></script>
 </body>
 </html>
