@@ -15,7 +15,174 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initAcousticPlayground();
   initCommandPalette();
+  initAsciiOcean();
 });
+
+/* ========================================================================
+   Ambient ASCII ocean: drifting character field and roaming sharks
+   ======================================================================== */
+function initAsciiOcean() {
+  const canvas = document.getElementById('ascii-ocean');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d', { alpha: true });
+  if (!ctx) return;
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const sharkStyles = [
+    { name: "GREAT WHITE", lines: ["                                         ;::tt'","                                          .;t%r.","     :                                    ;;SSS';","      :t:                                  't%%t:'","       :r;;                                 :t%%rt'","        ;tt':'                              ':%ttt:`","         ;:S%rt`           ',               `:t%SS:r;r:;:'t';;;':'","          ;tS%:t:;,       `:';:      ;;rt;tr;r%X%%tSXtt%Xt%t%tSSSr:r':","           ::%S%ttr:'         `;r't:::ttSt%tSXX8X8XSXXX8XSXX8%8S%%tSSo:,","            ,;tXS%%;:r'tr;:t;'t%t%S%X%XX8%88%S88#X#@8#X##8@8@X@#@%X%%%St;'","            ,rt%Stt:tr::tr';r:;S%XSSSXtX8XS8S88##8X@8#X88X8@8@8X%8X8XStt':","           `'%%tStrr;         .::tt:;r%ttt%X%Xt8XX%%SX8%X8SX8S8%XtX%So;:","          'rS%t:;::       ;;t;.      `'::':;;;%SXXSSt%SXtXt%tXt%;t;t''","         ;ttSt;:           ':               ;t:S%t;r:rt:;trr;;r;:'","        `;t;:.                              :'%XtS;.","       '::,                                 `rStS''","      'r;                                  `tSSS''","     `                                    ,rtS:;'","                                          ';t:r:"] },
+    { name: "HAMMERHEAD", lines: ["                                        `;:;;","     ;`                                  't;r;                         ::;O","      ::;                                'r%S:;.                       ::':","       ,t;;                               'tr%%:;                     ,:tr:","        ':rt''                             .tSS%;:                    ;;%:'","         .r:tt::                            't%%t:;:                 ;r%Sr,","          ;:tt;trt'                       :;;;XStSt;tr':;;:;:t''     `t:t;;","           .':ttSStt'          '';;r;t;r:::tSSt%%%Xt%t%S%S%%tSrt;;; :;tSt:;","            :;SSSXSt:;r;:t:'rtt:tX%tSXStt%%%SSX@#X%X88X8%8%S%%XXStr;ttS%tr:","            '::t8tttt:;;rrt;r:::ttSXStttSStt%8X@@8X%XXX88XS8S%SSStr;;r%SS';","           ;;t%Xtrrt,          '';ttr:':t;r%t%8%XStt%tXS%SXtXtrr:r` `t:%S:,","          ;trtSr:r;                       :trtt%SSr;rr:t;:;;::t:     .;St:.","         ';;t:t:                            ':St%:r`                 ;':S';","        ':t:t,                             :ttX%t'                    ;;t;'","       :;;;                               `:%%t::                     .;%:;","      ;:,                                ::SS;r'                       ';;;","     ;'                                  :'r;:                         ';tO"] },
+    { name: "WHALE SHARK", lines: ["                                        ,;t::'","                                         'r:r:'","    '                                     ::%S:;:","     :'                                   ':%S%t:'","      ,'`                                  ';`'tt;;'","       ;rt:                                 ';;'::',;","        .tr;;                                   ;.,..'.`'t:,'r::.:r:`:","         't;;r;                         ';,';:r';'``S'',X``,'`S.`,.`,`;:o'","          `;S:r:.                `;;`.trrt,,`.S,'..XXS`.`',`'8S%''XXX,.Sr;;","           `:t%%;:'      ,r::t.'t:'''S..''t',8S.`.,88X,,.,''.#@..``8`,``%r:","           .rtXXS;r;;r:::tS,'`',SX'....'`'888'....`@.,.'@@...8#,.'.'```tt:`","           ;;S%%%%:;t;t:'ttt.'S%St.'`.X`,XX@,``'`'@X@..X88``.XX8,.#'``,%%r,","           'rtS%t;'      ;'r,';r:,`''%t''``8''``''`@#.'.@X@@``,`'88#@%,.S:,","          ';:tr;'                ,t','','''St,``.,'%8`,,,X%'`.,,.XSXX'`.,r,","         .'t;:'                         ,'',.'`t;`,,...,,``.'`tX,,S''.'r;'","        'rr;'                                   ,;`':;'`':';,r::``''``","       ;;:.                                 '`:`:..;'","      ';'                                  ':.X.``'.","     ':                                   'rttSS:'","    .                                     ''%tr:'","                                         :':':."] },
+    { name: "TIGER SHARK", lines: ["                                         't;:rr,","     ,                                    't:tS:'","      ,r'                                  .r;t:;;","       ;:;.                                 :;tS%:`","        :::rt'                              ,'r;S%;;","         ;r;t;:;                             .;;;t:;;;r:t;r;';rtt::'t;","          ;:tSr:t',                 'tr::rtrt:tt;r%%tr:t;StS:tt:ttSS%:r:;","           'tt%tSSt::      :tt:tr::;rt%%rt;r%S%::;tXXXtt:;S8%t;;%%8XS%oS:,","            ;;;%S%S;t:;':::::r:%S%;;:rXS8r;:;X88::rr#88::r;88X:t8#8@%%%t%r:","            :rtXS%%;:rrt:;t;:trt%S;;ttS8%r;;:X%8r;t;@@Xtttt8#X:t8X88#SXS%::","           ,r;SXXt;;.      ':t;:ttr;tS%tt:;;ttS;::r%88t:rt88X;r:X%XStttS;.","          ';rtrtr',                 '::r;::rrt;;;r%tS;::tXSX:;t;X%ttr:o;;","         ;rS;r':                             ;;r:S;r;:t:r;rrrr':rt::;'","        ::r;r:                              :':t%;;`","       ';::                                 ;;r%t:'","      ';.                                  :;t%:t:","     `                                    ':;%tt;","                                         .':;'t'"] },
+    { name: "THRESHER", lines: ["   ':r:","  :'rrt;`                                    .ttr;","   .':r%:t;                                   .rS;.","     ,;';St:;                                  :'%r'","        '::St::t,                               :;t::;","          ';;:ttr;::'                            ':;Sr:","             `::trr:::ttt` ''                   ;t%StSt::t;:;;'rtt`","                 ::r;:r;t;;rt;;r'         ;r';:;::tS8%XX%ttS%XX%%t:;;o`","                      .trt';:S%::;tr'r;;';r%X%%St%8%XX%X%%8%SX%%%%%t%::';","                           ::::;:;r;':'rt;;%S%XtSSSS8%SS%%%%SXS%XSXSt;:r:","                             ;:;          ,;tr;;;ttXS%%tX%XXtXSStt:tto.","                           ;,                   :'SSXS;'';rr:trr''.","                                                 :ttS:;","                                                ,t%t;:","                                               ';t::","                                              ;tt;:","                                             ;':::"] },
+    { name: "MAKO", lines: ["     :","      ;.                                  ;t'r:","       :t'                                 'r;t;;","        ;';,                                ::%:r;","         ;:::::                              ':ttrt`","          ;'tS;:;                             ,ttttr;:","           ;;tXtt;'                       .;rrrSX%Xttrr;;r':;'r;:'","            :rtX%t:;'           ';r::t;:t'rtStSXXS8XS%%XS%SX%St%t::ro'","            .;%%StS:r;;t:;t;r't:t%StS%StS%XX%S%8#88#8X8XXS8SX%%8%Sttt;:tr,","            ':SSSX%Sr;:::;;::r;rr%%ttXXStS%%%8888#88%@8%%8XSXS%8SSttrt';::","            :;tt%;r':           .t:::';';t::tS%SSXS%XSXSStX%%XXS;;;ro`","           ';S%t;r.                       :t:trtttXt%trrrr:';t:::'","          ';St::;                             :t%%t;t;","         :'r'r;                              `t:%;r;","        :;';                                ,rt%':","       .;'                                 ';%':;","      ;'                                  'r;;.","     :"] }
+  ];
+  const glyphs = ' .·:;*%0123456789';
+  const sharks = Array.from({ length: sharkStyles.length }, (_, i) => ({
+    x: [0.18, 0.79, 0.51, 0.15, 0.84, 0.52][i],
+    y: [0.22, 0.25, 0.48, 0.72, 0.72, 0.88][i],
+    angle: [-0.35, 2.7, 1.3, -1.2, 0.7, -0.7][i],
+    speed: [28, 22, 16, 19, 14, 24][i],
+    scale: [0.86, 0.58, 0.67, 0.6, 0.62, 0.55][i],
+    alpha: [0.58, 0.48, 0.46, 0.48, 0.45, 0.44][i],
+    phase: i * 1.7, style: i
+  }));
+  let width = 0, height = 0, dpr = 1, frame = 0, last = 0, raf = 0;
+  let sprite = null, spriteScale = 1, sharkFontSize = 11, sharkCellW = 7;
+
+  function makeSprite() {
+    const light = document.documentElement.getAttribute('data-theme') === 'light';
+    const color = light ? [82, 88, 98] : [226, 231, 238];
+    sharkFontSize = width < 640 ? 8 : 11;
+    sharkCellW = sharkFontSize * 0.63;
+    spriteScale = width < 640 ? 0.52 : Math.min(1, width / 1500);
+    sprite = sharkStyles.map(({ name, lines }, styleIndex) => {
+      const maxCols = Math.max(...lines.map(line => line.length));
+      const characters = [];
+      lines.forEach((line, row) => {
+        [...line].forEach((char, col) => {
+          if (char === ' ') return;
+          const density = '@#8X%S'.includes(char) ? 0.78 : ('.:;t%'.includes(char) ? 0.38 : 0.58);
+          characters.push({ char, col, row, density });
+        });
+      });
+      return {
+        name,
+        width: maxCols * sharkCellW,
+        height: lines.length * sharkFontSize * 1.1,
+        rowCount: lines.length,
+        maxCols,
+        tailAxis: styleIndex === 4 ? 'vertical' : 'horizontal',
+        characters,
+        color
+      };
+    });
+  }
+
+  function resize() {
+    dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = Math.round(width * dpr);
+    canvas.height = Math.round(height * dpr);
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    makeSprite();
+  }
+
+  function draw(now) {
+    raf = 0;
+    if (document.hidden) return;
+    const elapsed = Math.min(now - (last || now), 50);
+    last = now;
+    frame += reducedMotion.matches ? 0 : elapsed;
+    ctx.clearRect(0, 0, width, height);
+    // A quiet bed of drifting ASCII particles gives the sharks an ocean to swim through.
+    const cols = Math.ceil(width / 17), rows = Math.ceil(height / 22);
+    ctx.font = `${width < 640 ? 9 : 10}px ui-monospace, SFMono-Regular, Menlo, monospace`;
+    ctx.textAlign = 'center';
+    for (let row = 0; row < rows; row++) {
+      for (let col = 0; col < cols; col++) {
+        const hash = (col * 31 + row * 17) % 19;
+        if (hash > 2) continue;
+        const phase = reducedMotion.matches ? 0 : Math.floor(frame / 850);
+        const glyph = glyphs[(col * 7 + row * 11 + phase) % glyphs.length];
+        ctx.fillStyle = `rgba(155,190,220,${0.08 + (hash % 3) * 0.025})`;
+        ctx.fillText(glyph, col * 17, row * 22 + 12);
+      }
+    }
+    sharks.forEach(shark => {
+      if (!reducedMotion.matches) {
+        const seconds = frame / 1000;
+        let turnRate = 0.28 * Math.sin(seconds * 0.31 + shark.phase)
+          + 0.14 * Math.sin(seconds * 0.12 + shark.phase * 1.7);
+        const steerX = shark.x < 0.15 ? (0.15 - shark.x) * 10 : shark.x > 0.85 ? (0.85 - shark.x) * 10 : 0;
+        const steerY = shark.y < 0.15 ? (0.15 - shark.y) * 10 : shark.y > 0.85 ? (0.85 - shark.y) * 10 : 0;
+        if (steerX || steerY) {
+          const towardCenter = Math.atan2(steerY, steerX);
+          const difference = Math.atan2(Math.sin(towardCenter - shark.angle), Math.cos(towardCenter - shark.angle));
+          turnRate += Math.sin(difference) * Math.min(1.5, Math.hypot(steerX, steerY) * 1.5);
+        }
+        shark.angle += turnRate * elapsed / 1000;
+        shark.x += Math.cos(shark.angle) * shark.speed * elapsed / 1000 / Math.max(400, width);
+        shark.y += Math.sin(shark.angle) * shark.speed * elapsed / 1000 / Math.max(400, height);
+      }
+      const depth = (Math.sin(frame * 0.00024 + shark.phase) + 1) / 2;
+      const scale = shark.scale * spriteScale * (0.91 + depth * 0.13);
+      const sharkSprite = sprite?.[shark.style];
+      if (!sharkSprite) return;
+      const centerX = shark.x * width;
+      const centerY = shark.y * height;
+      const opacity = shark.alpha * (0.28 + depth * 0.82);
+      const tailBeat = frame * 0.003 + shark.phase;
+      ctx.font = `${depth > 0.7 ? '600' : '400'} ${sharkFontSize}px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace`;
+      ctx.textBaseline = 'middle';
+      ctx.save();
+      ctx.globalAlpha = opacity;
+      ctx.translate(centerX, centerY);
+      // Most designs face right; the thresher is drawn vertically with its tail below.
+      const verticalTail = sharkSprite.tailAxis === 'vertical';
+      ctx.rotate(shark.angle + (verticalTail ? Math.PI / 2 : 0));
+      ctx.scale(scale, scale);
+      ctx.fillStyle = `rgb(${sharkSprite.color.join(',')})`;
+      ctx.strokeStyle = `rgba(${sharkSprite.color.join(',')},${0.4 + depth * 0.4})`;
+      ctx.lineWidth = depth > 0.72 ? 0.55 : 0;
+      sharkSprite.characters.forEach(({ char, col, row, density }) => {
+        const alongBody = col / Math.max(1, sharkSprite.maxCols - 1);
+        const x = col * sharkCellW - sharkSprite.width / 2;
+        const y = row * sharkFontSize * 1.1 - sharkSprite.height / 2;
+        // Keep the marked head fixed; flex only the tail end for each design's layout.
+        const tailProgress = verticalTail
+          ? row / Math.max(1, sharkSprite.rowCount - 1)
+          : 1 - alongBody;
+        const tail = Math.pow(Math.max(0, (tailProgress - 0.58) / 0.42), 2);
+        const flex = Math.sin(tailBeat - tailProgress * 2.8) * tail * 34 * spriteScale;
+        ctx.globalAlpha = opacity * density;
+        const charX = x + (verticalTail ? flex : 0);
+        const charY = y + (verticalTail ? 0 : flex);
+        ctx.fillText(char, charX, charY);
+        if (depth > 0.72) ctx.strokeText(char, charX, charY);
+      });
+      ctx.restore();
+    });
+    if (!reducedMotion.matches) raf = requestAnimationFrame(draw);
+  }
+
+  function start() { if (!raf) raf = requestAnimationFrame(draw); }
+  window.redrawAsciiOcean = () => {
+    cancelAnimationFrame(raf);
+    raf = 0;
+    last = 0;
+    makeSprite();
+    draw(performance.now());
+    if (!reducedMotion.matches) start();
+  };
+  resize();
+  start();
+  window.addEventListener('resize', resize, { passive: true });
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) { last = 0; start(); } });
+  reducedMotion.addEventListener?.('change', () => { if (reducedMotion.matches) { cancelAnimationFrame(raf); raf = 0; draw(performance.now()); } else start(); });
+}
 
 /* ==========================================================================
    Scroll Reading Progress Bar
@@ -75,6 +242,7 @@ function initTheme() {
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
     updateIcon(next);
+    window.redrawAsciiOcean?.();
   }
 
   function updateIcon(theme) {
